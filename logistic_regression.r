@@ -80,5 +80,13 @@ accuracy <- sum(diag(conf_matrix)) / sum(conf_matrix)
 print(paste("Accuracy:", accuracy))
 
 
+# First, the code reads the dataset into a variable named data using the read.csv() function and displays it using the View() function. A scatter plot is created using ggplot2 to visualize the relationship between glucose levels and diabetes outcomes, with the geom_jitter() function adding some random noise to the points for better visualization. The sum(is.na(data)) function checks for any missing values in the dataset.
 
+# The dataset is then split into training and testing sets using the sample.split() function from the caTools library, with 80% of the data allocated to the training set and the remaining 20% to the testing set. The subset() function is used to create the training_data and testing_data datasets based on the split.
+
+# A logistic regression model is trained using the glm() function, with the formula specifying that the Outcome variable (indicating diabetes presence) is predicted based on several predictor variables: Glucose, BMI, Pregnancies, BloodPressure, SkinThickness, Insulin, and Age. The family = "binomial" argument indicates that this is a logistic regression model. The model is trained on the training_data and the summary of the model is printed using the summary() function.
+
+# Predictions are made on the test set using the predict() function, with the type = "response" argument specifying that the output should be predicted probabilities. These probabilities are then converted to class labels ("diabetes" or "no diabetes") using the ifelse() function, with a threshold of 0.5.
+
+# The head() function is used to display the first few predicted class labels. A confusion matrix is created using the table() function to compare the actual outcomes in the test set with the predicted class labels. The confusion matrix is printed, and the accuracy of the model is calculated by summing the diagonal elements of the confusion matrix (correct predictions) and dividing by the total number of predictions. The accuracy is then printed.
 
