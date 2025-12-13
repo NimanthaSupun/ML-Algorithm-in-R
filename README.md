@@ -68,7 +68,3 @@ To run the Naive Bayes classification script, use the following command in R:
 ```r
 source("naive_bayes.r")
 ```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
